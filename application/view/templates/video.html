@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+<section>
+  <div class="video py-5 bg-light">
+    <div id="video" class="container">
+      <div class=" row ">
+          <div class="col-md-6 ">
+              <div class="card mb-6 box-shadow ">
+                  <div class="card-body ">
+                      <h1>Video:</h1>
+                      <div class="d-flex justify-content-between align-items-center ">
+                        <video width="320" height="240" controls ><source src="{{url_for('static', filename='video/'+video.get_videoURL())}}" type="video/mp4"></video>
+                        <li class="list-group-item text-center"  >
+                          <button  class="btn btn-danger" id="Curtir" onclick="curtir()">Curtir</button>
+                        </li>
+                      </div> 
+                      <div class="row">
+                        <div class="col">
+                          <label for="inputNome">Nome: </label>
+                          <input type="text" class="form-control" id="inputNome" name="nome">
+                        </div>
+                        <div class="col">
+                          <label for="InputComentario">Digite seu comentario</label>
+                          <input type="textarea" class="form-control" id="InputComentario" name="coment">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Enviar</button>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>   
+</section>
+
+
+
+
+
+{%endblock%}
